@@ -3,6 +3,7 @@
 # JavaScript Event Handling Example
 
 This repository demonstrates how to handle various JavaScript events, including **click**, **hover**, and **keydown** events, with practical examples in a simple HTML page.
+Live Demo= https://kushallegit.github.io/JS-Lab2/
 
 ## Features:
 - **Click Event**: Displays a message when the "Click Me!" button is clicked.
