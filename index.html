@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Event Handling Example</title>
+    <style>
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: lightblue;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: lightcoral;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+
+        #hoverMessage {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        #keyMessage {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Event Handling</h1>
+    <p>Click the button below to see the event handling in action:</p>
+    
+    <!-- For the click button -->
+    <button id="clickButton">Click Me!</button>
+    <p id="message"></p>
+
+    <!-- For hover button -->
+    <button id="hoverButton">Hover over me!</button>
+    <p id="hoverMessage">Mouse events will be shown here.</p>
+
+    <!-- For text input -->
+    <input type="text" id="inputField" placeholder="Press any key...">
+    <p id="keyMessage">Press any key in the input field.</p>
+
+    <script>
+        // For Hover events
+        document.getElementById("hoverButton").addEventListener("mouseover", function() {
+            document.getElementById("hoverMessage").textContent = "Mouse is over the button!";
+        });
+    
+        document.getElementById("hoverButton").addEventListener("mouseout", function() {
+            document.getElementById("hoverMessage").textContent = "Mouse left the button!";
+        });
+
+        // Handle click event
+        function handleClick() {
+            // Display a message in the paragraph with id 'message'
+            document.getElementById("message").textContent = "You clicked the button! Event handled successfully!";
+        }
+
+        // Add event listener for click event
+        document.getElementById("clickButton").addEventListener("click", handleClick);
+
+        // For keydown event on input field
+        document.getElementById("inputField").addEventListener("keydown", function(event) {
+            document.getElementById("keyMessage").textContent = "You pressed the key: " + event.key;
+        });
+    </script>
+
+</body>
+</html>
